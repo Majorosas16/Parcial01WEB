@@ -19,7 +19,6 @@ function App() {
 
   useEffect(() => {
     fetch(`https://openlibrary.org/search.json?q=${search}&limit=2`)
-    // fetch(`https://openlibrary.org/search.json?${search}&limit=10`)
     .then((res) => res.json())
     .then((datos) => setBooks(datos.docs))
     .catch((error) => setError(error))

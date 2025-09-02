@@ -1,7 +1,6 @@
 
 const BookItem = ({book, handleClick, read}) => {
 
-
     return (
     <>
     <h1>Book</h1>
@@ -24,7 +23,7 @@ const BookItem = ({book, handleClick, read}) => {
             placeholder="Notas personales"
              />
 
-             
+
         }
     </>
     )

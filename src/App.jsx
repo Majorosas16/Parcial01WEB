@@ -14,6 +14,7 @@ function App() {
     const [added, setAdded] = useState([]);
     console.log(added);
     
+    const [lectureState, setLectureState] = useState([]);
 
  const filteredBooks = books.filter((book) => book.title.toLowerCase().includes(search.toLowerCase()));  
 
@@ -33,6 +34,11 @@ function App() {
       setAdded(booksAdded);
     }
 
+      const lectureStateClick = (item) => {
+      const lectureStateC = [...lectureState, item]; 
+      setLectureState(lectureStateC);
+    }
+
   return (
     <>
       <input 
@@ -41,7 +47,7 @@ function App() {
       value={search}
       onChange={(e)=>setSearch(e.target.value)}
       />
-      <BookList books={filteredBooks} handleClick={handleClick}></BookList>
+      <BookList books={filteredBooks} handleClick={handleClick} lectureState={lectureStateClick}></BookList>
       <ReadBooks read={added}></ReadBooks>
     </>
   )
